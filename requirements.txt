@@ -4,6 +4,7 @@ uvicorn
 requests
 flask
 gunicorn
+groq-sdk
 
 transformers
 torch

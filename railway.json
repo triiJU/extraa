@@ -1,0 +1,11 @@
+{
+  "build": {
+    "builder": "nixpacks",
+    "nixpacksPlan": {
+      "pkgs": ["python310"]
+    }
+  },
+  "deploy": {
+    "startCommand": "streamlit run streamlitapp.py --server.port=$PORT --server.address=0.0.0.0"
+  }
+}

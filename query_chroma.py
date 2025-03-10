@@ -1,6 +1,4 @@
 import os
-import requests
-import json
 import streamlit as st
 from langchain.vectorstores import Chroma
 from langchain.embeddings import HuggingFaceEmbeddings
@@ -14,7 +12,7 @@ db = Chroma(persist_directory="chroma_db", embedding_function=embedding_model)
 groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 def query_papers(query, top_k=3):
-    """Search ChromaDB for relevant research papers and generate answers using GroqCloud."""
+    """Search ChromaDB for relevant research papers and generate answers using Groq."""
     try:
         # Fetch relevant documents from ChromaDB
         docs = db.similarity_search(query, k=top_k)
@@ -26,7 +24,7 @@ def query_papers(query, top_k=3):
         context = "\n\n".join([doc.page_content[:500] for doc in docs])  # Truncate to 500 characters
         llm_input = f"Context: {context}\n\nQuestion: {query}"
 
-        # Generate output using GroqCloud
+        # Generate output using Groq
         response = groq_client.complete(
             engine="llama-2-7b",  # or "mistral-7b" depending on your choice
             prompt=llm_input,

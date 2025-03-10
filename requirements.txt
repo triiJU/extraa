@@ -4,31 +4,19 @@ uvicorn
 requests
 flask
 gunicorn
-
 transformers
 torch
 sentence-transformers
-
-# Vector Database
 chromadb
-
-# API
 arxiv
-
-# Web Scraping & Data Processing
 beautifulsoup4
 scrapy
-
-# PDF & Unstructured Data Processing
 pdfminer.six
 pdfplumber
 unstructured[all-docs]
-
-# For hugging Face Integration
 huggingface_hub
 gradio
 tiktoken
 langchain-community
-
-# Database Fixes
 pysqlite3-binary
+git+https://github.com/groq/groq-sdk.git

@@ -1,10 +1,10 @@
+git+https://github.com/groq/groq-sdk.git
 streamlit
 fastapi
 uvicorn
 requests
 flask
 gunicorn
-groq-sdk
 
 transformers
 torch
